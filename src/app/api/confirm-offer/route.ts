@@ -31,7 +31,7 @@ export async function GET(req: Request) {
 
     console.log("✅ Angebot erfolgreich bestätigt:", data);
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: Number(process.env.EMAIL_PORT),
       secure: false, // Wichtig: `false`, da STARTTLS genutzt wird

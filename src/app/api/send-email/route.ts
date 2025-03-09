@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "E-Mail oder Angebots-ID fehlt!" }, { status: 400 });
     }
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: Number(process.env.EMAIL_PORT),
       secure: false, // Wichtig: `false`, da STARTTLS genutzt wird
@@ -27,9 +27,9 @@ export async function POST(req: Request) {
       },
     });
 
-    let confirmLink = `http://localhost:3000/api/confirm-offer?id=${offer_id}`;
+    const confirmLink = `http://localhost:3000/api/confirm-offer?id=${offer_id}`;
 
-    let info = await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"PopLab" <${process.env.EMAIL_USER}>`,
       to: customer_email,
       subject: "Bitte bestätigen Sie Ihr Angebot",
