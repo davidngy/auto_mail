@@ -56,7 +56,7 @@ export async function GET(req: Request) {
   const baseUrl =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "https://poplab.online"; // Hier später deine echte Domain einsetzen
+    : "https://auto-mail-hixzy1i89-davidngys-projects.vercel.app/"; // Hier später deine echte Domain einsetzen
 
   return NextResponse.redirect(`${baseUrl}/danke`);
   } catch (err) {
