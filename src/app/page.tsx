@@ -73,6 +73,11 @@ export default function Home() {
           Angebot erstellen & E-Mail senden
         </button>
       </form>
+      
+      {offerId && (
+        <p className="mt-3 text-center text-gray-500">📜 Angebots-ID: {offerId}</p>
+      )}
+
 
       {message && <p className="mt-3 text-center">{message}</p>}
     </div>

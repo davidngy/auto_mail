@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       },
     });
 
-    const confirmLink = `http://localhost:3000/api/confirm-offer?id=${offer_id}`;
+    const confirmLink = `https://auto-mail-davidngy-davidngys-projects.vercel.app/api/confirm-offer?id=${offer_id}`;
 
     const info = await transporter.sendMail({
       from: `"PopLab" <${process.env.EMAIL_USER}>`,
